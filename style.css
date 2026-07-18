@@ -1142,13 +1142,21 @@ footer{
         RESPONSIVE
 ===============================*/
 
-@media(max-width:992px){
+@media(max-width:768px){
 
+.hero{
+    height:80vh;
+}
 .hero h1{
 
     font-size:4rem;
 
 }
+.hero-image{
+    object-fit:cover;
+    object-position:70% center;
+}
+
 
 .destination,
 .cabin-row{
