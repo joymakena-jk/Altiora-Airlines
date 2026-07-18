@@ -1,0 +1,1858 @@
+/*==================================================
+                ROOT VARIABLES
+==================================================*/
+
+:root{
+
+    --navy:#061a2f;
+    --deep-blue:#0b2744;
+    --sky:#4da6ff;
+    --gold:#d8b36a;
+    --white:#ffffff;
+    --light:#f8fbff;
+    --gray:#707b88;
+    --dark:#101820;
+    --soft-white:#f4f8fc;
+    --cream:#faf6ee;
+
+}
+
+/*==================================================
+                GLOBAL RESET
+==================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    overflow-x:hidden;
+    line-height:1.7;
+
+}
+
+img{
+
+    display:block;
+    width:100%;
+    transition:.5s ease;
+
+}
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+button{
+
+    border:none;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    transition:.35s ease;
+
+}
+
+h1,h2,h3{
+
+    font-family:'Playfair Display',serif;
+
+}
+
+section{
+
+    padding:130px 8%;
+
+}
+
+.section-tag{
+
+    display:inline-block;
+    color:var(--gold);
+    font-size:.9rem;
+    font-weight:600;
+    letter-spacing:4px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+
+}
+
+.section-subtitle{
+
+    max-width:700px;
+    margin:20px auto 70px;
+    text-align:center;
+    color:var(--gray);
+    font-size:1.05rem;
+    line-height:2;
+
+}
+
+h2{
+
+    font-size:3.3rem;
+    text-align:center;
+    margin-bottom:20px;
+
+}
+/*==================================================
+                    NAVIGATION
+==================================================*/
+
+nav{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 4%;
+
+    background:rgba(6,26,47,.82);
+
+    backdrop-filter:blur(18px);
+
+    z-index:1000;
+
+    transition:.4s;
+
+}
+
+.logo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1;
+    flex-shrink:0;
+}
+
+.logo h1{
+    font-family:'Playfair Display',serif;
+    font-size:1.45rem;
+    font-weight:700;
+    letter-spacing:2px;
+    margin:0;
+    color:#fff;
+}
+
+.logo span{
+    font-size:.52rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.75);
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+.nav-links a{
+    position:relative;
+    color:#ffffff;
+    font-size:.95rem;
+    font-weight:500;
+    text-decoration:none;
+    transition:.35s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.current{
+    color:var(--gold);
+}
+
+.nav-links a.current::after{
+    width:100%;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#d4af37;
+    transition:.35s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.book-btn{
+
+    background:var(--gold);
+    color:white;
+
+    padding:15px 34px;
+
+    border-radius:40px;
+
+}
+
+.book-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+
+}
+
+.menu-toggle{
+
+    display:none;
+    color:white;
+    font-size:2rem;
+    cursor:pointer;
+
+}
+/*==================================================
+                    HERO
+==================================================*/
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.55)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    text-align:center;
+
+    color:white;
+
+    padding:20px;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h1{
+
+    font-size:clamp(4rem,8vw,6.5rem);
+
+    margin-bottom:25px;
+
+    color:#b6935f;
+
+}
+
+.hero-content p{
+
+    font-size:1.25rem;
+
+    color:rgba(255,255,255,.9);
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.hero-buttons button{
+
+    padding:18px 42px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+}
+
+#bookFlight{
+
+    background:var(--gold);
+
+    color:white;
+
+}
+
+#exploreDestinations{
+
+    background:white;
+
+    color:var(--navy);
+
+}
+
+.hero-buttons button:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.hero-stats{
+
+    background:white;
+
+    width:85%;
+
+    margin:-60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.hero-stats h2{
+
+    color:var(--navy);
+
+    font-size:2.3rem;
+
+    margin-bottom:10px;
+
+}
+
+.hero-stats p{
+
+    color:var(--gray);
+
+}
+/*==================================================
+                    ABOUT
+==================================================*/
+
+.about{
+
+    background:var(--light);
+    text-align:center;
+
+}
+
+.about-image{
+
+    max-width:850px;
+    margin:0 auto 90px;
+
+}
+
+.about-image img{
+
+    border-radius:30px;
+    height:520px;
+    object-fit:cover;
+    box-shadow:0 30px 70px rgba(0,0,0,.12);
+
+}
+
+.about-image img:hover{
+
+    transform:scale(1.02);
+
+}
+
+.about-content{
+
+    max-width:760px;
+    margin:auto;
+
+}
+
+.about-content h2{
+
+    margin:20px 0;
+    font-size:3.2rem;
+
+}
+
+.about-content p{
+
+    color:var(--gray);
+    font-size:1.05rem;
+    line-height:2;
+
+}
+
+.about-features{
+
+    margin-top:80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.feature{
+
+    background:white;
+
+    padding:50px 35px;
+
+    border-radius:28px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.feature h3{
+
+    font-size:2.2rem;
+    margin-bottom:20px;
+    color:var(--navy);
+
+}
+
+.line{
+
+    width:90px;
+    height:3px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    margin:20px auto 30px;
+
+}
+
+.feature p{
+
+    color:var(--gray);
+
+}
+
+
+/*==================================================
+                DESTINATIONS
+==================================================*/
+
+.destinations{
+
+    background:white;
+
+}
+
+.destination{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    margin-bottom:120px;
+
+}
+
+.destination:last-child{
+
+    margin-bottom:0;
+
+}
+
+.destination.reverse{
+
+    direction:rtl;
+
+}
+
+.destination.reverse .destination-text{
+
+    direction:ltr;
+
+}
+
+.destination-image img{
+
+    height:520px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+.destination-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.destination-text span{
+
+    color:var(--gold);
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+}
+
+.destination-text h3{
+
+    font-size:3rem;
+
+    margin:15px 0 20px;
+
+}
+
+.destination-text p{
+
+    color:var(--gray);
+
+    line-height:2;
+
+    margin-bottom:35px;
+
+}
+
+.destination-text button{
+
+    padding:16px 36px;
+
+    border-radius:50px;
+
+    background:var(--navy);
+
+    color:white;
+
+}
+
+.destination-text button:hover{
+
+    background:var(--gold);
+
+}
+
+
+/*==================================================
+                CABIN EXPERIENCE
+==================================================*/
+
+.cabin{
+
+    background:var(--light);
+
+}
+
+.cabin-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    margin-bottom:120px;
+
+}
+
+.cabin-row:last-child{
+
+    margin-bottom:0;
+
+}
+
+.cabin-row.reverse{
+
+    direction:rtl;
+
+}
+
+.cabin-row.reverse .cabin-text{
+
+    direction:ltr;
+
+}
+
+.cabin-image img{
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+.cabin-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.cabin-text span{
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+}
+
+.cabin-text h3{
+
+    font-size:2.8rem;
+
+    margin:18px 0;
+
+}
+
+.cabin-text p{
+
+    color:var(--gray);
+
+    line-height:2;
+
+    margin-bottom:30px;
+
+}
+
+.cabin-text ul{
+
+    list-style:none;
+
+    margin-bottom:35px;
+
+}
+
+.cabin-text li{
+
+    margin-bottom:14px;
+
+    color:var(--dark);
+
+    font-weight:500;
+
+}
+
+.cabin-text button{
+
+    padding:16px 36px;
+
+    background:var(--gold);
+
+    color:white;
+
+    border-radius:50px;
+
+}
+
+.cabin-text button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+/*==============================
+            FLEET
+===============================*/
+
+.fleet{
+
+    background:var(--soft-white);
+    text-align:center;
+
+}
+
+.fleet-grid{
+
+    margin-top:70px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+
+}
+
+.fleet-card{
+
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.08);
+    transition:.45s;
+
+}
+
+.fleet-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 35px 80px rgba(0,0,0,.15);
+
+}
+
+.fleet-card img{
+
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    transition:.5s;
+
+}
+
+.fleet-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.fleet-content{
+
+    padding:35px;
+
+}
+
+.fleet-content h3{
+
+    font-size:2rem;
+    margin-bottom:15px;
+
+}
+
+.fleet-content p{
+
+    color:var(--gray);
+    line-height:1.9;
+
+}
+
+.fleet-stats{
+
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid rgba(0,0,0,.08);
+
+}
+
+.fleet-stats span{
+
+    color:var(--gold);
+    font-weight:600;
+
+}
+/*==============================
+      TRAVEL INSPIRATION
+===============================*/
+
+.journey{
+
+    position:relative;
+    height:95vh;
+    overflow:hidden;
+    padding:0;
+
+}
+
+.journey img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.journey::after{
+
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,0,0,.2),
+        rgba(0,0,0,.55)
+    );
+
+}
+
+.journey-overlay{
+
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    z-index:5;
+    color:white;
+    padding:20px;
+
+}
+
+.journey-overlay span{
+
+    color:#f2d39c;
+    letter-spacing:4px;
+    margin-bottom:20px;
+
+}
+
+.journey-overlay h2{
+
+    color:white;
+    font-size:4rem;
+    margin-bottom:20px;
+
+}
+
+.journey-overlay p{
+
+    max-width:700px;
+    font-size:1.2rem;
+    line-height:2;
+    margin-bottom:40px;
+
+}
+
+.journey-overlay button{
+
+    background:var(--gold);
+    color:white;
+    padding:18px 42px;
+    border-radius:50px;
+    transition:.35s;
+
+}
+
+.journey-overlay button:hover{
+
+    transform:translateY(-6px);
+
+}
+/*==============================
+        TESTIMONIALS
+===============================*/
+
+.testimonials{
+
+    background:var(--cream);
+    text-align:center;
+
+}
+
+.testimonial-slider{
+
+    max-width:900px;
+    margin:70px auto;
+
+}
+
+.testimonial-card{
+
+    display:none;
+
+    background:white;
+    padding:60px;
+    border-radius:30px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+}
+
+.testimonial-card.active{
+
+    display:block;
+
+}
+
+.stars{
+
+    color:#f0c36d;
+    font-size:1.5rem;
+    letter-spacing:5px;
+    margin-bottom:30px;
+
+}
+
+.testimonial-card p{
+
+    font-size:1.15rem;
+    line-height:2;
+    color:var(--gray);
+    margin-bottom:35px;
+
+}
+
+.testimonial-card h3{
+
+    font-size:2rem;
+
+}
+
+.testimonial-card span{
+
+    color:var(--gold);
+
+}
+
+.testimonial-dots{
+
+    display:flex;
+    justify-content:center;
+    gap:14px;
+
+}
+
+.dot{
+
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#d8c7b1;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.dot.active{
+
+    background:var(--gold);
+
+}
+/*==============================
+          CONTACT
+===============================*/
+
+.contact{
+
+    background:#081420;
+    color:white;
+    text-align:center;
+
+}
+
+.contact h2{
+
+    color:white;
+
+}
+
+.contact-content{
+
+    max-width:950px;
+    margin:auto;
+
+}
+
+.contact-info{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin:70px 0;
+
+}
+
+.contact-info div{
+
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    padding:35px;
+
+}
+
+.contact-info h3{
+
+    margin-bottom:15px;
+
+}
+
+.contact button{
+
+    background:var(--gold);
+    color:white;
+    padding:18px 45px;
+    border-radius:50px;
+    transition:.35s;
+
+}
+
+.contact button:hover{
+
+    transform:translateY(-6px);
+
+}
+/*==============================
+            FOOTER
+===============================*/
+
+footer{
+
+    background:#04080d;
+    color:white;
+    text-align:center;
+    padding:90px 8%;
+
+}
+
+.footer-logo{
+
+    width:130px;
+    margin:auto;
+
+}
+
+.footer-logo img{
+
+    width:100%;
+
+}
+
+.footer-tagline{
+
+    margin:30px 0;
+    color:rgba(255,255,255,.7);
+
+}
+
+
+.designer{
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.maker{
+
+    color:var(--gold);
+    font-weight:600;
+
+}
+
+.copyright{
+
+    margin-top:25px;
+    color:rgba(255,255,255,.45);
+
+}
+/*==============================
+        RESPONSIVE
+===============================*/
+
+@media(max-width:992px){
+
+.hero h1{
+
+    font-size:4rem;
+
+}
+
+.destination,
+.cabin-row{
+
+    grid-template-columns:1fr;
+
+}
+
+.destination.reverse,
+.cabin-row.reverse{
+
+    direction:ltr;
+
+}
+
+.fleet-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.contact-info{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer-links{
+
+    flex-wrap:wrap;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+    height:90vh;
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.nav-links{
+
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:white;
+    flex-direction:column;
+    text-align:center;
+    display:none;
+    padding:30px;
+
+}
+
+.nav-links.active{
+
+    display:flex;
+
+}
+
+.menu-toggle{
+
+    display:block;
+
+}
+
+.hero-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.about-features{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+/*==================================================
+        ACCESSIBILITY / FOCUS STATES
+==================================================*/
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.dot:focus-visible,
+.menu-toggle:focus-visible{
+
+    outline:3px solid var(--sky);
+    outline-offset:3px;
+    border-radius:6px;
+
+}
+
+/*==================================================
+        NAV — SCROLLED STATE
+==================================================*/
+
+nav.scrolled{
+
+    padding:10px 4%;
+    background:rgba(6,26,47,.96);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+}
+
+/*==================================================
+        LOADER
+==================================================*/
+
+#loader{
+
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--navy);
+
+    transition:opacity .6s ease, visibility .6s ease;
+
+}
+
+#loader.loader-hidden{
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+}
+
+.loader-logo{
+
+    font-family:'Playfair Display',serif;
+    font-size:2.2rem;
+    letter-spacing:10px;
+    color:var(--gold);
+
+    animation:loaderPulse 1.4s ease-in-out infinite;
+
+}
+
+@keyframes loaderPulse{
+
+    0%,100%{ opacity:.4; letter-spacing:10px; }
+    50%{ opacity:1; letter-spacing:14px; }
+
+}
+
+/*==================================================
+        CURSOR GLOW
+==================================================*/
+
+.cursor-glow{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:420px;
+    height:420px;
+    margin:-210px 0 0 -210px;
+
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(216,179,106,.10), transparent 70%);
+
+    pointer-events:none;
+    z-index:2;
+
+    opacity:0;
+    transition:opacity .4s ease;
+
+}
+
+.cursor-glow.active{
+
+    opacity:1;
+
+}
+
+/*==================================================
+        FLOATING CLOUDS (hero atmosphere)
+==================================================*/
+
+.cloud{
+
+    position:fixed;
+    top:0;
+    pointer-events:none;
+    z-index:1;
+
+    width:260px;
+    height:90px;
+
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+    filter:blur(6px);
+
+    opacity:.7;
+
+}
+
+.cloud1{ top:12%; animation:driftCloud 38s linear infinite; }
+.cloud2{ top:35%; width:320px; height:110px; animation:driftCloud 52s linear infinite -18s; }
+.cloud3{ top:60%; width:200px; height:70px; animation:driftCloud 44s linear infinite -30s; }
+
+@keyframes driftCloud{
+
+    from{ transform:translateX(-30vw); }
+    to{ transform:translateX(130vw); }
+
+}
+
+/*==================================================
+        FLIGHT PARTICLES
+==================================================*/
+
+#particles{
+
+    position:fixed;
+    inset:0;
+    height:100vh;
+    pointer-events:none;
+    z-index:1;
+    overflow:hidden;
+
+}
+
+.particle{
+
+    position:absolute;
+    bottom:-10px;
+
+    background:var(--gold);
+    border-radius:50%;
+
+    animation-name:riseParticle;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+
+}
+
+@keyframes riseParticle{
+
+    from{ transform:translateY(0) translateX(0); opacity:0; }
+    10%{ opacity:1; }
+    to{ transform:translateY(-100vh) translateX(40px); opacity:0; }
+
+}
+
+/*==================================================
+        SCROLL REVEAL (fade-up)
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .9s ease, transform .9s ease;
+
+}
+
+.fade-up.visible{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+/*==================================================
+        CLICKABLE IMAGES
+==================================================*/
+
+.clickable-img{
+
+    cursor:zoom-in;
+
+}
+
+.destination-image,
+.cabin-image,
+.fleet-card{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.destination-image::after,
+.cabin-image::after{
+
+    content:"⤢  View";
+    position:absolute;
+    bottom:18px;
+    right:18px;
+
+    background:rgba(6,26,47,.75);
+    color:var(--white);
+    font-size:.8rem;
+    letter-spacing:1px;
+
+    padding:8px 16px;
+    border-radius:30px;
+
+    opacity:0;
+    transform:translateY(10px);
+    transition:.35s ease;
+
+    pointer-events:none;
+
+}
+
+.destination-image:hover::after,
+.cabin-image:hover::after{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+/*==================================================
+        LIGHTBOX
+==================================================*/
+
+.lightbox-overlay{
+
+    position:fixed;
+    inset:0;
+    z-index:3000;
+
+    background:rgba(4,10,18,.92);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .35s ease, visibility .35s ease;
+
+}
+
+.lightbox-overlay.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.lightbox-figure{
+
+    max-width:900px;
+    width:100%;
+    text-align:center;
+
+}
+
+.lightbox-img{
+
+    width:100%;
+    max-height:75vh;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+
+}
+
+.lightbox-caption{
+
+    color:var(--white);
+    margin-top:18px;
+    letter-spacing:1px;
+    font-size:.95rem;
+
+}
+
+.lightbox-close{
+
+    position:absolute;
+    top:28px;
+    right:34px;
+
+    background:transparent;
+    color:var(--white);
+    font-size:2.4rem;
+    line-height:1;
+
+}
+
+.lightbox-close:hover{
+
+    color:var(--gold);
+    transform:rotate(90deg);
+
+}
+
+/*==================================================
+        BOOKING MODAL
+==================================================*/
+
+.booking-modal-overlay{
+
+    position:fixed;
+    inset:0;
+    z-index:3000;
+
+    background:rgba(4,10,18,.72);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .35s ease, visibility .35s ease;
+
+}
+
+.booking-modal-overlay.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.booking-modal{
+
+    position:relative;
+    width:100%;
+    max-width:520px;
+
+    background:var(--white);
+    border-radius:26px;
+    padding:50px 45px;
+
+    box-shadow:0 40px 90px rgba(0,0,0,.35);
+
+    transform:translateY(24px);
+    transition:transform .35s ease;
+
+}
+
+.booking-modal-overlay.active .booking-modal{
+
+    transform:translateY(0);
+
+}
+
+.booking-modal h3{
+
+    font-size:1.9rem;
+    color:var(--navy);
+    margin-bottom:10px;
+
+}
+
+.booking-sub{
+
+    color:var(--gray);
+    margin-bottom:30px;
+
+}
+
+.booking-row{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:18px;
+
+}
+
+.booking-field{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+.booking-field label{
+
+    font-size:.82rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--gray);
+
+}
+
+.booking-field input,
+.booking-field select{
+
+    padding:13px 16px;
+    border:1px solid rgba(0,0,0,.12);
+    border-radius:12px;
+    font-family:'Poppins',sans-serif;
+    font-size:.95rem;
+    color:var(--dark);
+
+}
+
+.booking-submit{
+
+    width:100%;
+    margin-top:8px;
+
+    background:var(--navy);
+    color:var(--white);
+
+    padding:16px;
+    border-radius:14px;
+    font-size:1rem;
+    letter-spacing:.5px;
+
+}
+
+.booking-submit:hover{
+
+    background:var(--gold);
+
+}
+
+.booking-confirmation{
+
+    margin-top:20px;
+    color:var(--navy);
+    font-size:.92rem;
+    line-height:1.8;
+
+}
+
+.booking-close{
+
+    position:absolute;
+    top:20px;
+    right:24px;
+
+    background:transparent;
+    color:var(--gray);
+    font-size:2rem;
+    line-height:1;
+
+}
+
+.booking-close:hover{
+
+    color:var(--navy);
+    transform:rotate(90deg);
+
+}
+
+/*==================================================
+        RESPONSIVE — ADDITIONAL REFINEMENTS
+==================================================*/
+
+@media(max-width:992px){
+
+    .cloud,
+    .cursor-glow{
+
+        display:none;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+
+        padding:90px 6%;
+
+    }
+
+    h2{
+
+        font-size:2.3rem;
+
+    }
+
+    .destination-text h3,
+    .cabin-text h3{
+
+        font-size:2.1rem;
+
+    }
+
+    .about-image img{
+
+        height:340px;
+
+    }
+
+    .destination-image img,
+    .cabin-image img{
+
+        height:320px;
+
+    }
+
+    .fleet-card img{
+
+        height:220px;
+
+    }
+
+    .booking-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .booking-modal{
+
+        padding:40px 28px;
+
+    }
+
+    .testimonial-card{
+
+        padding:38px 26px;
+
+    }
+
+    .journey-overlay h2{
+
+        font-size:2.6rem;
+
+    }
+
+    .contact-info{
+
+        margin:45px 0;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-content h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .hero-content p{
+
+        font-size:1.05rem;
+
+    }
+
+    .hero-buttons button{
+
+        padding:15px 30px;
+        font-size:.9rem;
+
+    }
+
+    .book-btn{
+
+        padding:11px 22px;
+        font-size:.85rem;
+
+    }
+
+}
+
+/*==================================================
+        REDUCED MOTION
+==================================================*/
+
+@media(prefers-reduced-motion: reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+        scroll-behavior:auto !important;
+
+    }
+
+}
